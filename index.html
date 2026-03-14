@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sharique Shafi | Cinematic Portfolio</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Model Viewer -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body class="scene-0-active">
+
+  <!-- Global Elements -->
+  
+  <!-- Grain Overlay via SVG Filter -->
+  <svg class="grain-svg" xmlns="http://www.w3.org/2000/svg">
+    <filter id="grainy">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 0.1 0" />
+    </filter>
+  </svg>
+  <div class="grain"></div>
+  
+  <div class="vignette"></div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- Global Navigation -->
+  <nav class="global-nav">
+    <div class="logo">Sharique Shafi</div>
+    <div class="nav-right">
+      <a href="assets/Sharique_Shafi_Resume.pdf" target="_blank" class="btn-ghost-gold">Download Resume</a>
+    </div>
+  </nav>
+
+  <!-- Global Scene Dots -->
+  <div class="scene-dots-container">
+    <div class="scene-dot active" data-scene="0"></div>
+    <div class="scene-dot" data-scene="1"></div>
+    <div class="scene-dot" data-scene="2"></div>
+    <div class="scene-dot" data-scene="3"></div>
+    <div class="scene-dot" data-scene="4"></div>
+    <div class="scene-dot" data-scene="5"></div>
+    <div class="scene-dot" data-scene="6"></div>
+    <div class="scene-dot" data-scene="7"></div>
+    <div class="scene-dot" data-scene="8"></div>
+  </div>
+
+  <!-- Global Avatar — per-scene cinematic portraits, crossfade on scroll -->
+  <div class="avatar-container avatar-canvas-container" id="avatar-container">
+    <img class="scene-avatar active" data-scene="0" src="assets/avatar-s0.png" alt="Sharique Shafi - Hero">
+    <img class="scene-avatar"        data-scene="1" src="assets/avatar-s1.png" alt="Sharique Shafi - Education">
+    <img class="scene-avatar"        data-scene="2" src="assets/avatar-s2.png" alt="Sharique Shafi - Coding">
+    <img class="scene-avatar"        data-scene="3" src="assets/avatar-s3.png" alt="Sharique Shafi - Finance">
+    <img class="scene-avatar"        data-scene="4" src="assets/avatar-s4.png" alt="Sharique Shafi - Marketing">
+    <img class="scene-avatar"        data-scene="5" src="assets/avatar-s5.png" alt="Sharique Shafi - AI">
+    <img class="scene-avatar"        data-scene="6" src="assets/avatar-s6.png" alt="Sharique Shafi - Creative">
+    <img class="scene-avatar"        data-scene="7" src="assets/avatar-s7.png" alt="Sharique Shafi - Experience">
+    <img class="scene-avatar"        data-scene="8" src="assets/avatar-s8.png" alt="Sharique Shafi - Contact">
+  </div>
+
+  <!-- Main Scroll Container -->
+  <main>
+    
+    <!-- SCENE 0: HERO -->
+    <section class="scene" id="scene-0">
+      <div class="hero-spotlight"></div>
+      <div class="container hero-container">
+        <div class="content-left">
+          <p class="eyebrow" class="fade-up-1">MBA Candidate · IIM Sirmaur · Class of 2026</p>
+          <h1 class="fade-up-2">Sharique<br>Shafi</h1>
+          <p class="subtitle fade-up-3">Analyst. Builder. Creative.</p>
+          <p class="body-text fade-up-4">Where data meets design, and strategy meets story.</p>
+          
+          <div class="cta-group fade-up-5">
+            <a href="#scene-1" class="btn-primary">▶ Explore My Work</a>
+            <a href="assets/Sharique_Shafi_Resume.pdf" target="_blank" class="btn-secondary">↓ Download Resume</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="scroll-cue">
+        <div class="scroll-line"></div>
+        <span class="scroll-text">SCROLL</span>
+      </div>
+    </section>
+
+    <!-- SCENE 1: EDUCATION -->
+    <section class="scene" id="scene-1">
+      <div class="container education-container">
+        <div class="content-left">
+          <p class="scene-label fade-up-scene1">CHAPTER 01</p>
+          <h2 class="scene-title fade-up-scene1">The Foundation</h2>
+          <p class="scene-subtitle fade-up-scene1">Where curiosity was institutionalized.</p>
+          
+          <div class="timeline">
+            <!-- Entry 1 -->
+            <div class="timeline-item edu-card">
+              <div class="timeline-dot"></div>
+              <div class="edu-card-content">
+                <div class="edu-header">
+                  <h3>MBA — Master of Business Administration</h3>
+                  <span class="edu-year">2024–2026 (Expected)</span>
+                </div>
+                <p class="edu-institute">Indian Institute of Management, Sirmaur</p>
+                <p class="edu-score">Score: 62.5%</p>
+                <div class="edu-tags">
+                  <span class="tag">Business Analytics</span>
+                  <span class="tag">Financial Modeling</span>
+                  <span class="tag">AI Marketing</span>
+                </div>
+                <div class="edu-badge">IIM SIRMAUR</div>
+              </div>
+            </div>
+
+            <!-- Entry 2 -->
+            <div class="timeline-item edu-card">
+              <div class="timeline-dot"></div>
+              <div class="edu-card-content">
+                <div class="edu-header">
+                  <h3>B.Com (Hons.) — Bachelor of Commerce</h3>
+                  <span class="edu-year">2019–2022</span>
+                </div>
+                <p class="edu-institute">P.G.D.A.V. College, Delhi University</p>
+                <p class="edu-score">Score: 72.1%</p>
+                <ul class="edu-highlights">
+                  <li>Perfect 10/10 in Financial Management</li>
+                  <li>Outstanding in Financial Accounting & Computer Application</li>
+                  <li>Technical Head — Commercium (led 11-member team, 4 major events)</li>
+                  <li>Designed 60+ promotional posts, 2 teasers reaching 500+ students</li>
+                </ul>
+                <div class="edu-tags">
+                  <span class="tag">Commerce</span>
+                  <span class="tag">Leadership</span>
+                  <span class="tag">Event Management</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Entry 3 -->
+            <div class="timeline-item edu-card">
+              <div class="timeline-dot"></div>
+              <div class="edu-card-content">
+                <div class="edu-header">
+                  <h3>Class XII CBSE</h3>
+                  <span class="edu-year">2019</span>
+                </div>
+                <p class="edu-institute">D.A.V. Public School, Patna</p>
+                <p class="edu-score">Score: 84.8%</p>
+              </div>
+            </div>
+
+            <!-- Entry 4 -->
+            <div class="timeline-item edu-card">
+              <div class="timeline-dot"></div>
+              <div class="edu-card-content">
+                <div class="edu-header">
+                  <h3>Class X ICSE</h3>
+                  <span class="edu-year">2017</span>
+                </div>
+                <p class="edu-institute">Don Bosco Academy, Patna</p>
+                <p class="edu-score">Score: 81.0%</p>
+              </div>
+            </div>
+          </div> <!-- End Timeline -->
+          
+          <div class="achievement-banner edu-card">
+            <span class="star">★</span>
+            <p>Runner-up among 400+ teams — National Social Enterprise Idea Challenge,<br>Azim Premji University, 2024</p>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENE 2: CODING & WEB DEVELOPMENT -->
+    <section class="scene" id="scene-2">
+      <canvas id="matrix-canvas"></canvas>
+      <div class="container coding-container">
+        <div class="content-left">
+          <p class="scene-label fade-up-scene2" style="color: var(--blue);">CHAPTER 02</p>
+          <h2 class="scene-title fade-up-scene2">The Builder</h2>
+          <p class="scene-subtitle fade-up-scene2">From idea to interface — building things that work.</p>
+        </div>
+        
+        <div class="content-right">
+          <div class="project-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+              <div class="card-glow"></div>
+              <div class="project-header">
+                <h3>GPT Architect: MBA Learning Studio</h3>
+                <span class="project-status"><span class="status-dot"></span>Completed</span>
+              </div>
+              <p class="project-type">Web Application</p>
+              <p class="project-desc">Comprehensive learning platform for Custom GPT architecture and business AI, built for MBA students. Features modular curriculum, AI tutor "Lex", and knowledge assessment quiz system.</p>
+              <div class="tech-stack">
+                <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Google Fonts</span>
+              </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+              <div class="card-glow"></div>
+              <div class="project-header">
+                <h3>GPT Excel: MBA Edition</h3>
+                <span class="project-status"><span class="status-dot"></span>Completed</span>
+              </div>
+              <p class="project-type">Web Application / Dashboard</p>
+              <p class="project-desc">Dashboard app for MBA students to practice financial modeling and Excel skills with AI-driven smart suggestions, business case studies, and formula auto-completion in a professional Excel-green aesthetic.</p>
+              <div class="tech-stack">
+                <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>CSS Var</span>
+              </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+              <div class="card-glow"></div>
+              <div class="project-header">
+                <h3>ArthScore</h3>
+                <span class="project-status"><span class="status-dot"></span>MVP Complete</span>
+              </div>
+              <p class="project-type">Full-Stack Application</p>
+              <p class="project-desc">Smart Loan Risk Assessment & Real-Time Default Prediction System. AI-powered credit risk platform with ML classification model, FastAPI backend, React dashboard, and early warning system.</p>
+              <div class="tech-stack">
+                <span>React 18</span><span>Vite</span><span>Tailwind</span><span>FastAPI</span><span>Python</span>
+              </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card">
+              <div class="card-glow"></div>
+              <div class="project-header">
+                <h3>CNC Shop Floor Digitization</h3>
+                <span class="project-status"><span class="status-dot"></span>PoC Complete</span>
+              </div>
+              <p class="project-type">Full-Stack Web App (Group Project)</p>
+              <p class="project-desc">Digitizing the Indian MSME shop floor — a tablet app for CNC machine operators that eliminates manual paper-based data entry. Real-time P&L dashboard, production feed, and CSV export. Achieved 71.4% profit margin post-deployment.</p>
+              <p class="project-guided">Guided by: Dr. Shashi Kant Srivastava, IIM Sirmaur</p>
+              <div class="tech-stack">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Supabase</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENE 3: FINANCE & DATA ANALYTICS -->
+    <section class="scene" id="scene-3">
+      <div class="skyline-gradient"></div>
+      <div class="container finance-container">
+        <div class="content-left">
+          <p class="scene-label fade-up-scene3" style="color: #10B981;">CHAPTER 03</p>
+          <h2 class="scene-title fade-up-scene3">The Analyst</h2>
+          <p class="scene-subtitle fade-up-scene3">Making sense of numbers, one model at a time.</p>
+          
+          <div class="metrics-row fade-up-scene3">
+            <div class="metric">
+              <span class="currency">₹</span><span class="count-number" data-target="17336">0</span> <span class="unit">Cr</span>
+              <p>PPP Project Value</p>
+            </div>
+            <div class="metric">
+              <span class="count-number" data-target="11.87" data-decimals="2">0</span><span class="unit">%</span>
+              <p>Project IRR</p>
+            </div>
+            <div class="metric">
+              <span class="count-number" data-target="50">0</span>
+              <p>Villages Assessed</p>
+            </div>
+            <div class="metric">
+              <span class="count-number" data-target="500">0</span><span class="unit">+</span>
+              <p>Girls Impacted</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="content-right">
+          <div class="finance-cards">
+            <!-- Project 1 -->
+            <div class="fin-card">
+              <div class="fin-header">
+                <h3>Financial Analysis: Indian Power Sector</h3>
+                <span class="tag" style="color: var(--gold); border-color: var(--gold);">Excel Advanced</span>
+              </div>
+              <p class="fin-desc">7 listed companies · WACC, NPV, ROCE · Identified positive NPVs (NTPC North Karanpura) · Capital structure & payout analysis (Power Grid 70% payout)</p>
+            </div>
+            <!-- Project 2 -->
+            <div class="fin-card">
+              <div class="fin-header">
+                <h3>Intrinsic Valuation: Artefact Projects Ltd.</h3>
+                <span class="tag" style="color: var(--gold); border-color: var(--gold);">DCF Modeling</span>
+              </div>
+              <p class="fin-desc">FCFF approach + DCF modeling · Fair value ₹57.57 vs market ₹100 → OVERVALUED finding · 3-statement model (P&L + Balance Sheet + Cash Flow) · Scenario & sensitivity analysis · Peer benchmarking</p>
+            </div>
+            <!-- Project 3 -->
+            <div class="fin-card">
+              <div class="fin-header">
+                <h3>PPP Financial Model: Vijayawada–Chennai Freight Corridor</h3>
+                <span class="tag" style="color: var(--gold); border-color: var(--gold);">Infra Finance</span>
+              </div>
+              <p class="fin-desc">₹17,336 Crore · 452 km · 35-year concession · DBFOT framework · 3:1 debt-equity · 40% VGF · Project IRR 11.87% · Equity IRR 15.93% · Revenue: TAC-GTKM/TKM, terminals, logistics</p>
+            </div>
+            <!-- Project 4 -->
+            <div class="fin-card">
+              <div class="fin-header">
+                <h3>ML Applications in Business</h3>
+                <span class="tag" style="color: var(--gold); border-color: var(--gold);">Python &amp; ML</span>
+              </div>
+              <p class="fin-desc">Credit scoring · Fraud detection · Customer segmentation · Model interpretability and business decision impact</p>
+            </div>
+            <!-- Project 5 -->
+            <div class="fin-card fade-up-scene3">
+              <div class="fin-header">
+                <h3>PAPN Impact Assessment (Internship)</h3>
+                <span class="tag" style="color: var(--gold); border-color: var(--gold);">Social Impact</span>
+              </div>
+              <p class="fin-desc">50 villages · 50+ datasets · 60-page report · 7 gaps identified · 35% projected outreach boost · 20% data reliability improvement</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENE 4: DIGITAL MARKETING & SEO -->
+    <section class="scene" id="scene-4">
+      <div class="projector-glow"></div>
+      <div class="container marketing-container">
+        <div class="content-left">
+          <p class="scene-label fade-up-scene4" style="color: #A855F7;">CHAPTER 04</p>
+          <h2 class="scene-title fade-up-scene4">The Strategist</h2>
+          <p class="scene-subtitle fade-up-scene4">Turning search intent into visibility, and visibility into results.</p>
+          
+          <div class="metrics-row marketing-metrics fade-up-scene4">
+            <div class="metric">
+              <span class="count-number" data-target="5">0</span>
+              <p>Top 5 Google Ranks</p>
+            </div>
+            <div class="metric">
+              <span class="count-number" data-target="60">0</span><span class="unit">+</span>
+              <p>Promotional Designs</p>
+            </div>
+            <div class="metric">
+              <span class="count-number" data-target="25">0</span><span class="unit">%</span>
+              <p>Engagement Boost</p>
+            </div>
+            <div class="metric">
+              <span class="count-number" data-target="300">0</span><span class="unit">+</span>
+              <p>Students Reached</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-right">
+          <div class="marketing-grid fade-up-scene4">
+            <!-- Card 1 -->
+            <div class="marketing-card">
+              <div class="mkt-header">
+                <h3>SEO: earticleblog.com</h3>
+                <span class="tag">Top 5 Google</span>
+              </div>
+              <p class="mkt-desc">App review blog for FinTech and Fantasy Gaming. Conducted keyword research, search intent analysis, and on-page SEO targeting "newly launched app" keywords to capture early search demand.</p>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="marketing-card">
+              <div class="mkt-header">
+                <h3>Social Media: Urooj</h3>
+                <span class="tag">+25% Engagement</span>
+              </div>
+              <p class="mkt-desc">Managed KPI-driven digital campaigns across 20+ posts. Reached 400+ ward members and trained 30+ underprivileged girls in digital literacy.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="marketing-card">
+              <div class="mkt-header">
+                <h3>Digital Promos: IIM CSR Center</h3>
+                <span class="tag">30+ Posts</span>
+              </div>
+              <p class="mkt-desc">Led digital promotion for 10+ health drives and school programs. Produced 6 reels and engaged 300+ students as Digital Promotions Lead.</p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="marketing-card">
+              <div class="mkt-header">
+                <h3>TEDx IIM Sirmaur (MOSAIC)</h3>
+                <span class="tag">Event Identity</span>
+              </div>
+              <p class="mkt-desc">Created all digital assets for an 8-speaker event. Single-handedly managed live technical operations ensuring zero disruptions during the event.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENE 5: AI & AUTOMATION -->
+    <section class="scene" id="scene-5">
+      <canvas id="neural-canvas"></canvas>
+      <div class="container ai-container">
+        <div class="content-left">
+          <p class="scene-label fade-up-scene5" style="color: #3B82F6;">CHAPTER 05</p>
+          <h2 class="scene-title fade-up-scene5">The Architect</h2>
+          <p class="scene-subtitle fade-up-scene5">Building with intelligence — automating the possible.</p>
+          
+          <div class="ai-tools fade-up-scene5">
+            <span class="ai-badge">ChatGPT</span>
+            <span class="ai-badge">Claude</span>
+            <span class="ai-badge">Gemini</span>
+            <span class="ai-badge">Google Veo</span>
+            <span class="ai-badge">Midjourney</span>
+            <span class="ai-badge">Scikit-learn</span>
+            <span class="ai-badge">FastAPI</span>
+          </div>
+        </div>
+
+        <div class="content-right">
+          <div class="ai-grid fade-up-scene5">
+            <!-- Project 1 -->
+            <div class="ai-card border-glow">
+              <div class="ai-header">
+                <h3>Custom GPT Solutions</h3>
+                <span class="tag tech-tag">OpenAI &amp; Anthropic</span>
+              </div>
+              <p class="ai-desc">Built <strong>MBA Learning Studio GPT</strong> ('Lex') and <strong>Finance Excel Assistant GPT</strong>. Engineered custom system prompts, knowledge base injections, and conversational workflows integrated into web apps.</p>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="ai-card border-glow">
+              <div class="ai-header">
+                <h3>AI Video Production</h3>
+                <span class="tag tech-tag">Google Veo</span>
+              </div>
+              <p class="ai-desc">Utilized Google Veo (AI Test Kitchen) to create AI-generated promotional videos and reels. Designed AI-driven marketing workflows that reduced creative production time significantly.</p>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="ai-card border-glow">
+              <div class="ai-header">
+                <h3>AI Content Pipeline</h3>
+                <span class="tag tech-tag">Gen AI Tools</span>
+              </div>
+              <p class="ai-desc">Automated content creation workflows using Midjourney, DALL-E, Canva AI, and Adobe Firefly. Produced social media creatives and campaign assets 10× faster than traditional methods.</p>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="ai-card border-glow">
+              <div class="ai-header">
+                <h3>ArthScore ML Model</h3>
+                <span class="tag tech-tag">Python &amp; FastAPI</span>
+              </div>
+              <p class="ai-desc">Classification ML model for FinTech loan default prediction using Scikit-learn. Trained on synthetic credit scenarios and served via FastAPI for real-time risk scoring in a dashboard.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENE 6: CREATIVE PORTFOLIO -->
+    <section class="scene" id="scene-6">
+      <div class="studio-lighting"></div>
+      <div class="container creative-container">
+        <div class="content-full">
+          <p class="scene-label fade-up-scene6" style="color: #F59E0B;">CHAPTER 06</p>
+          <h2 class="scene-title fade-up-scene6">The Creator</h2>
+          <p class="scene-subtitle fade-up-scene6">Every frame tells a story. Every design makes a statement.</p>
+          
+          <div class="creative-tabs fade-up-scene6">
+            <button class="tab-btn active" data-filter="all">All</button>
+            <button class="tab-btn" data-filter="design">Graphic Design</button>
+            <button class="tab-btn" data-filter="film">Films &amp; Reels</button>
+            <button class="tab-btn" data-filter="photo">Photography</button>
+          </div>
+
+          <div class="fan-grid fade-up-scene6" id="fan-grid">
+            <!-- Item 1 - Design -->
+            <div class="fan-card design">
+              <div class="card-face">
+                <div class="card-media-wrap">
+                  <img src="assets/media/design/Sharique Shafi_MBA24155_GD_Task1.png" alt="TEDx Design" class="creative-media">
+                </div>
+                <div class="card-label">TEDx IIM Sirmaur</div>
+              </div>
+            </div>
+            
+            <!-- Item 2 - Film -->
+            <div class="fan-card film">
+              <div class="card-face film-face">
+                <div class="card-media-wrap">
+                  <video src="assets/media/teasers/Commquest_22 Teaser.mp4" class="creative-media" muted loop playsinline></video>
+                  <div class="play-overlay">▶</div>
+                </div>
+                <div class="card-label">Commquest '22 Teaser</div>
+              </div>
+            </div>
+
+            <!-- Item 3 - Photo -->
+            <div class="fan-card photo">
+              <div class="card-face">
+                <div class="card-media-wrap">
+                  <img src="assets/media/design/jpg_20220919_173435_0000.jpg" alt="Photography" class="creative-media">
+                </div>
+                <div class="card-label">Macro Photography</div>
+              </div>
+            </div>
+            
+            <!-- Item 4 - Design -->
+            <div class="fan-card design">
+              <div class="card-face">
+                <div class="card-media-wrap">
+                  <img src="assets/media/design/@commercium_pgdav _commerciumpgdav_20250118_130943_0001.png" alt="Campaign Design" class="creative-media">
+                </div>
+                <div class="card-label">Commercium Social Media</div>
+              </div>
+            </div>
+
+            <!-- Item 5 - Film -->
+            <div class="fan-card film">
+              <div class="card-face film-face">
+                <div class="card-media-wrap">
+                  <video src="assets/media/teasers/Sankalp Intro.mp4" class="creative-media" muted loop playsinline></video>
+                  <div class="play-overlay">▶</div>
+                </div>
+                <div class="card-label">Sankalp Intro Reel</div>
+              </div>
+            </div>
+            
+            <!-- Item 6 - Photo -->
+            <div class="fan-card photo">
+              <div class="card-face">
+                <div class="card-media-wrap">
+                  <img src="assets/media/design/jpg_20220919_173424_0000.jpg" alt="Street Photo" class="creative-media">
+                </div>
+                <div class="card-label">Street Photography</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENE 7: EXPERIENCE & LEADERSHIP -->
+    <section class="scene" id="scene-7">
+      <div class="split-bg">
+        <div class="office-bg"></div>
+        <div class="community-bg"></div>
+      </div>
+      
+      <div class="container exp-container">
+        <div class="content-left">
+          <p class="scene-label fade-up-scene7" style="color: #6366F1;">CHAPTER 07</p>
+          <h2 class="scene-title fade-up-scene7">The Leader</h2>
+          <p class="scene-subtitle fade-up-scene7">Leading teams, driving impact, shaping communities.</p>
+          
+          <div class="experience-list fade-up-scene7">
+            <!-- Exp 1 -->
+            <div class="exp-card">
+              <div class="exp-date">April 2025 – June 2025</div>
+              <h3 class="exp-title">Data Research &amp; Analytics Intern</h3>
+              <h4 class="exp-org">PAPN (People's Action for People in Need)</h4>
+              <p class="exp-loc">Sirmaur, Himachal Pradesh</p>
+              <p class="exp-desc">Conducted impact assessment across 50 villages. Analyzed 50+ datasets. Delivered 60-page insight report projecting 35% outreach increase for 500+ adolescent girls.</p>
+              <div class="exp-metrics">
+                <div><span class="count-number" data-target="50">0</span> Villages</div>
+                <div><span class="count-number" data-target="35">0</span>% Boost</div>
+              </div>
+            </div>
+
+            <!-- Exp 2 -->
+            <div class="exp-card">
+              <div class="exp-date">July 2022 – February 2024</div>
+              <h3 class="exp-title">Technical Manager &amp; Research Analyst</h3>
+              <h4 class="exp-org">Urooj</h4>
+              <p class="exp-loc">Patna, Bihar</p>
+              <p class="exp-desc">Engaged 400+ ward members. Delivered research insights. Managed digital campaigns and trained 30+ underprivileged girls in MS Office and online safety.</p>
+              <div class="exp-metrics">
+                <div><span class="count-number" data-target="400">0</span>+ Members</div>
+                <div><span class="count-number" data-target="25">0</span>% Engagement</div>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="subsection-title fade-up-scene7 mt-3">Leadership</h3>
+          <div class="leadership-grid fade-up-scene7">
+            <div class="lead-card">
+              <h4>TEDx Coordinator</h4>
+              <p>MOSAIC Club (IIM Sirmaur)</p>
+              <span>Executed 8-speaker event</span>
+            </div>
+            <div class="lead-card">
+              <h4>Digital Promotions</h4>
+              <p>CSR Cell (Sankalp)</p>
+              <span>10+ CSR events</span>
+            </div>
+            <div class="lead-card">
+              <h4>Technical Head</h4>
+              <p>Commercium (PGDAV)</p>
+              <span>Led 11-member team</span>
+            </div>
+          </div>
+          
+          <h3 class="subsection-title fade-up-scene7 mt-3">Trophies &amp; Badges</h3>
+          <div class="awards-flex fade-up-scene7">
+            <div class="award-ribbon">🏆 National Runner-up (Social Enterprise Challenge)</div>
+            <div class="award-ribbon">⭐ Perfect Score 10/10 (Financial Management)</div>
+          </div>
+
+          <div class="cert-badges fade-up-scene7">
+            <span class="cert-badge">🎓 IBM: Python &amp; AI</span>
+            <span class="cert-badge">🎓 Google: R Programming</span>
+            <span class="cert-badge">🎓 NISM V-A Mutual Fund</span>
+            <span class="cert-badge">🎓 Finance Management</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENE 8: CONTACT & FOOTER -->
+    <section class="scene" id="scene-8">
+      <div class="doorway-glow"></div>
+      <div class="container contact-container">
+        
+        <div class="contact-content">
+          <p class="scene-label fade-up-scene8" style="color: #FBBF24;">FINAL SCENE</p>
+          <h2 class="scene-title fade-up-scene8">Let's Build Something</h2>
+          <p class="scene-subtitle fade-up-scene8">Whether it's a data problem, a digital campaign, a web app, or a creative project — I'd love to hear from you.</p>
+
+          <div class="contact-grid">
+            <!-- Left Side: Info & Socials -->
+            <div class="contact-info fade-up-scene8">
+              <h3>Open to:</h3>
+              <ul>
+                <li>✦ Full-time roles in Analytics, Consulting, or Digital Strategy</li>
+                <li>✦ Internships and freelance projects</li>
+                <li>✦ Collaborative MBA / research projects</li>
+                <li>✦ Creative collaborations (film, design, content)</li>
+              </ul>
+              
+              <div class="social-links mt-3">
+                <a href="https://www.linkedin.com/in/shariqueshafi" target="_blank" class="social-icon">LinkedIn</a>
+                <a href="https://github.com/ShariqueShafi" target="_blank" class="social-icon">GitHub</a>
+                <a href="https://www.instagram.com/shafi.sharique" target="_blank" class="social-icon">Instagram</a>
+                <a href="https://in.pinterest.com/shafi_sharique/" target="_blank" class="social-icon">Pinterest</a>
+                <a href="mailto:shariqueshafi5@gmail.com" class="social-icon highlight">Email Me</a>
+              </div>
+            </div>
+
+            <!-- Right Side: Form -->
+            <div class="contact-form-wrapper fade-up-scene8">
+              <form class="contact-form" onsubmit="event.preventDefault();">
+                <div class="input-group">
+                  <input type="text" id="name" required placeholder="Name">
+                </div>
+                <div class="input-group">
+                  <input type="email" id="email" required placeholder="Email">
+                </div>
+                <div class="input-group">
+                  <input type="text" id="subject" required placeholder="Subject">
+                </div>
+                <div class="input-group">
+                  <textarea id="message" rows="4" required placeholder="Message"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message <span class="arrow">→</span></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Footer Credits -->
+      <footer class="rolling-credits">
+        <div class="credits-content">
+          <p class="credit-name">Sharique Shafi</p>
+          <p class="credit-role">MBA Candidate · IIM Sirmaur · Class of 2026</p>
+          <div class="credit-divider"></div>
+          <p class="credit-small">Designed &amp; Built by Sharique Shafi</p>
+          <p class="credit-small">Technologies: Three.js · GSAP · HTML5 · CSS3 · JavaScript</p>
+          <p class="credit-quote">"The best investment is in yourself."</p>
+          <p class="credit-copyright">© 2026 Sharique Shafi. All rights reserved.</p>
+        </div>
+      </footer>
+    </section>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+# Cinematic Portfolio Tasks
+
+- [x] 1. Project Setup
+  - [x] Initialize `index.html`, `style.css`, and `main.js`
+  - [x] Set up global CSS variables (colors, typography)
+  - [x] Include CDNs (GSAP, ScrollTrigger, Three.js, model-viewer)
+- [x] 2. Global UI Elements
+  - [x] Fixed global navbar & social resume button
+  - [x] Scene indicator dots
+  - [x] Cinematic grain overlay & vignette
+  - [x] Custom cursor
+- [x] 3. Scene 0: Hero
+- [x] 4. Scene 1: Education
+- [x] 5. Scene 2: Coding & Web Development
+- [x] 6. Scene 3: Finance & Data Analytics
+- [x] 7. Scene 4: Digital Marketing & SEO
+- [x] 8. Scene 5: AI & Automation
+- [x] 9. Scene 6: Creative Portfolio
+- [x] 10. Scene 7: Experience & Leadership
+- [x] 11. Scene 8: Contact
+- [x] 12. Polish & Scroll Animations
+  - [x] GSAP ScrollTrigger wiring
+  - [x] Background transitions
+  - [x] Avatar state management
+  - [x] Mobile responsiveness
