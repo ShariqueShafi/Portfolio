@@ -580,3 +580,137 @@ gsap.from(".credits-content", {
 });
 
 
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// DETAIL MODAL — open/close system
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+(function initModal() {
+  const modal     = document.getElementById('detail-modal');
+  const backdrop  = document.getElementById('modal-backdrop');
+  const closeBtn  = document.getElementById('modal-close');
+  const elTitle   = document.getElementById('modal-title');
+  const elOrg     = document.getElementById('modal-org');
+  const elPeriod  = document.getElementById('modal-period');
+  const elLoc     = document.getElementById('modal-loc');
+  const elBody    = document.getElementById('modal-body');
+  const elTags    = document.getElementById('modal-tags');
+
+  if (!modal) return;
+
+  function openModal(el) {
+    const d = el.dataset;
+    elTitle.textContent  = d.modalTitle  || '';
+    elOrg.textContent    = d.modalOrg    || '';
+    elPeriod.textContent = d.modalPeriod || '';
+    elLoc.textContent    = d.modalLoc    || '';
+    elBody.textContent   = d.modalBody   || '';
+
+    // Render tag pills
+    elTags.innerHTML = '';
+    if (d.modalTags) {
+      d.modalTags.split('|').forEach(tag => {
+        const span = document.createElement('span');
+        span.className = 'modal-tag';
+        span.textContent = tag.trim();
+        elTags.appendChild(span);
+      });
+    }
+
+    // Hide empty meta items
+    elOrg.style.display    = elOrg.textContent    ? '' : 'none';
+    elPeriod.style.display = elPeriod.textContent ? '' : 'none';
+    elLoc.style.display    = elLoc.textContent    ? '' : 'none';
+
+    modal.removeAttribute('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.setAttribute('hidden', '');
+    document.body.style.overflow = '';
+  }
+
+  // Delegate click to every .clickable-card
+  document.addEventListener('click', e => {
+    const card = e.target.closest('.clickable-card');
+    if (card && card.dataset.modalTitle) {
+      e.stopPropagation();
+      openModal(card);
+    }
+  });
+
+  // Close via backdrop or X button
+  backdrop.addEventListener('click', closeModal);
+  closeBtn.addEventListener('click', closeModal);
+
+  // Close on Escape key
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeModal();
+  });
+})();
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// CONTACT FORM — EmailJS Integration
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+(function initContactForm() {
+  const contactForm = document.getElementById('contact-form');
+  const submitBtn = document.getElementById('submit-btn');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent standard page reload
+      
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = 'Sending... <span class="arrow">⌛</span>';
+      submitBtn.disabled = true;
+
+      // TODO: Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with actual EmailJS IDs
+      // emailjs.sendForm('portfolio', 'template_fe9jm27', this)
+      
+      // We wrap the emailjs call in a try/catch in case the SDK didn't load or keys are missing
+      try {
+        emailjs.sendForm('portfolio', 'template_fe9jm27', this)
+          .then(() => {
+            console.log('SUCCESS!');
+            submitBtn.innerHTML = 'Sent Successfully! <span class="arrow">✓</span>';
+            submitBtn.style.backgroundColor = 'rgba(16, 185, 129, 0.2)'; // Green tint
+            submitBtn.style.color = '#10B981';
+            submitBtn.style.borderColor = '#10B981';
+            contactForm.reset();
+            
+            // Show Success Toast
+            const toast = document.getElementById('success-toast');
+            if (toast) {
+              toast.classList.add('show');
+              setTimeout(() => toast.classList.remove('show'), 5000);
+            }
+            
+            // Reset button after 3 seconds
+            setTimeout(() => {
+              submitBtn.innerHTML = originalText;
+              submitBtn.style = ''; // Clear inline styles
+              submitBtn.disabled = false;
+            }, 3000);
+          }, (error) => {
+            console.log('FAILED...', error);
+            submitBtn.innerHTML = 'Failed to Send <span class="arrow">✕</span>';
+            submitBtn.style.backgroundColor = 'rgba(239, 68, 68, 0.2)'; // Red tint
+            submitBtn.style.color = '#EF4444';
+            submitBtn.style.borderColor = '#EF4444';
+            
+            // Re-enable so they can try again
+            setTimeout(() => {
+              submitBtn.innerHTML = originalText;
+              submitBtn.style = '';
+              submitBtn.disabled = false;
+            }, 3000);
+          });
+      } catch (err) {
+        console.error("EmailJS Error (Missing Keys?):", err);
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+        alert("Email service isn't fully configured yet. Please set up the EmailJS keys in the code.");
+      }
+    });
+  }
+})();
